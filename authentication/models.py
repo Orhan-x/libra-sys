@@ -22,4 +22,4 @@ class Registration(models.Model):
         super().save(*args, **kwargs)
         
     def __str__(self) -> str:
-        return self.f_name + self.l_name
+        return f"{self.f_name} {self.l_name}"
