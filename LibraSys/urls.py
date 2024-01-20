@@ -20,5 +20,5 @@ from authentication.views import registeration
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('register/', registeration, name='register')
+    path('register/', registeration, name='register'),
 ]
