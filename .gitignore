@@ -5,7 +5,7 @@ __pycache__
 *.pyc
 __pycache__/
 local_settings.py
-
+ToAdd.md
 .env
 db.sqlite3
 media/*
