@@ -14,4 +14,12 @@ class RegisterForm(forms.ModelForm):
             'phone_number',
             'email',
         ]
+        
+        labels = {
+            'cni':'Carte National',
+            'f_name':"First Name" ,
+            'l_name': 'Last Name ',
+            'phone_number': 'Phone Number',
+            'email': 'E-mail',
+        }
 
