@@ -15,7 +15,7 @@ def registeration(request):
         
     context['form'] = form
         
-    return render(request, 'register.html', context)
+    return render(request, 'authentication/register.html', context)
     
     
 
