@@ -3,6 +3,7 @@
 {% load static %}
 
 {% comment %} Main Css File{% endcomment %}
+
 {% block main_css_file %} 
     <link rel="stylesheet" href="{% static "css/signup.css" %}" />
 {% endblock main_css_file %}
@@ -12,12 +13,22 @@
 
 {% block page_content %}
 
-<form method="POST">
-    {% csrf_token %}
+    <div class='form-container' >
+        <h4>sign up</h4>
+        <form method="POST">
+            {% csrf_token %}
 
-    {{ form.as_p }}
-    <button type='submit' >Register</button>
-    
-</form>
+            {{ form.as_div }}
+            <button type='submit' class='btn register-btn' >Register</button>
+        </form>
+        <button type='button' class='btn google-btn' >
+            <img src="{% static "css/google-color-icon.svg" %}"/>Continue with Google
+        </button>
+        <hr>
+        <button type='button' class='btn cancel-btn' >
+            <a href='#'>Cancel</a>
+        </button>
+
+    </div>
 
 {% endblock page_content %}
