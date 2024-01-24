@@ -23,3 +23,6 @@ class RegisterForm(forms.ModelForm):
             'email': 'E-mail',
         }
 
+class LoginForm(forms.Form):
+    cni = forms.CharField(label="Carte national",max_length = 10)
+    password = forms.CharField(widget=forms.PasswordInput())

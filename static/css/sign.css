@@ -1,0 +1,144 @@
+:root {
+    --primary-color: #985ACE;
+}
+
+/* global rules */
+
+*,
+*::after,
+*::before {
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none !important;
+    color: black;
+}
+
+hr {
+    border-width: 1px;
+}
+
+body {
+    font-family: 'Lucida Sans', Verdana, sans-serif, Lora;
+    background-color: #ccc;
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* small devices */
+@media (min-width: 758px) {
+    .container {
+        width: 750px;
+    }
+}
+
+
+/* Meduim devices */
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+
+/* Large devices */
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+div.form-container {
+    background-color: white;
+    padding: 20px 60px;
+    border-radius: 20px;
+    width: 460px;
+    height: 630px;
+}
+
+div.form-container > h4 {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 400;
+    text-transform: capitalize;
+    font-family:'Lucida Sans', 'Lucida Sans Regular',  Verdana, sans-serif;
+}
+
+div.form-container form > div {
+    background-color: #F8F1FF;
+    margin: 10px 0;
+    width: 100%;
+    padding: 7px 15px;
+    border-radius: 10px;
+}
+
+div.form-container form > div label {
+    font-size: 10px;
+    font-weight: 400;
+    color: #403A4B;
+}
+
+div.form-container form > div input {
+    font-size: 12px;
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: hsl(270, 100%, 97%);
+    height: 30px;
+    color: #403A4B;
+    font-weight: bold;
+}
+
+div.form-container form > div label,
+div.form-container form > div input {
+    display: block;
+}
+
+div.form-container .btn {
+    width: 100%;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border-color: #985ACE;
+    border-width: 1px;
+    cursor: pointer;
+}
+
+div.form-container .btn.login-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    margin-bottom: 15px;
+    margin-top: 20px;
+}
+
+div.form-container .btn.google-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+div.form-container .btn.google-btn img {
+    width: 20px;
+    margin-right: 20px;
+}
