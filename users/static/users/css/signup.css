@@ -28,7 +28,7 @@ hr {
 
 body {
     font-family: 'Lucida Sans', Verdana, sans-serif, Lora;
-    background-color: #ccc;
+    background-color: red !important;
 }
 
 .container {
@@ -38,6 +38,10 @@ body {
     padding-right: 15px;
 }
 
+#id_cni_helptext {
+    color: #403A4B !important;
+    font-size: 10px;
+}
 /* small devices */
 @media (min-width: 758px) {
     .container {
