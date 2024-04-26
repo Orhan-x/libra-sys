@@ -1,6 +1,7 @@
 from django.utils.translation import gettext_lazy as _
 from django.db import models
-
+import uuid
+from django.utils import timezone
 class Registration(models.Model):
     
     cni          = models.CharField(primary_key=True, max_length = 10, unique=True,blank=False, name="cni",verbose_name="CNIE",
@@ -30,3 +31,20 @@ class Registration(models.Model):
         
     def __str__(self) -> str:
         return f"{self.f_name} {self.l_name}"
+
+class Book(models.Model):
+    id = models.UUIDField(primary_key=True, unique=True,default=uuid.uuid4,blank=False, editable=False)
+    book_name = models.CharField(max_length=300, verbose_name="Name of the book")
+    borrow_date = models.DateField(verbose_name="Created Date",auto_now_add=True,null=False, blank=False, editable=False)
+    updated_at = models.DateTimeField(verbose_name="Update Time",
+                                      auto_now=True,
+                                      primary_key=False,
+                                      unique=False,
+                                      blank=False,
+                                      null=False,
+                                      help_text="Generated Automatically",
+                                      editable=False
+                                      )
+
+    def __str__(self) -> str:
+        return self.book_name
