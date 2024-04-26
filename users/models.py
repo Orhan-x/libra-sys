@@ -1,16 +1,20 @@
 from django.utils.translation import gettext_lazy as _
 from django.db import models
-from django import forms
+
 class Registration(models.Model):
     
-    cni          = models.CharField(primary_key=True, max_length = 10, unique=True, name="cni",verbose_name="CNIE",
-                                    help_text="Upper or Lower cases isn't matter",
+    cni          = models.CharField(primary_key=True, max_length = 10, unique=True,blank=False, name="cni",verbose_name="CNIE",
+                                    help_text="*Upper or Lower cases isn't matter",
+                                    null=False,editable=True,
                                     error_messages={'unique': "This CNIE is already Exists! (ByMe)"}
                                     )
-    f_name       = models.CharField(max_length = 255, error_messages={'required':"REQUIRED"},help_text="FirstName")
-    l_name       = models.CharField(max_length = 255, blank=True)
-    phone_number = models.CharField(max_length = 10, blank=True)
+    f_name       = models.CharField(max_length = 255,help_text="*Only characters (Capitalize)")
+    l_name       = models.CharField(max_length = 255, blank=False, null=False)
+    phone_number = models.CharField(max_length = 10, blank=False, null=False)
     email        = models.EmailField(blank=True)
+
+    class Meta:
+        ordering= ["f_name", "l_name"]
 
     def save(self, *args, **kwargs):
         
