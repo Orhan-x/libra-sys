@@ -33,7 +33,7 @@ class Registration(models.Model):
         return f"{self.f_name} {self.l_name}"
 
 class Book(models.Model):
-    id = models.UUIDField(primary_key=True, unique=True,default=uuid.uuid4,blank=False)
+    id = models.UUIDField(primary_key=True, unique=True,default=uuid.uuid4,blank=False, editable=False)
     book_name = models.CharField(max_length=300, verbose_name="Name of the book")
     borrow_date = models.DateField(verbose_name="Created Date",auto_now_add=True)
     updated_at = models.DateTimeField(verbose_name="Update Time",auto_now=True)
